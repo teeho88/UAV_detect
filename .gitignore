@@ -179,5 +179,6 @@ pyrightconfig.json
 *.mp4
 *.rar
 DK_giaovien
+runs
 
 # End of https://www.toptal.com/developers/gitignore/api/python

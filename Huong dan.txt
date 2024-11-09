@@ -1,0 +1,28 @@
+1. vào thư mục bin: DK_giaovien\DK_giaovien\DK_giaovien\bin
+Nếu chưa có thư mục .venv thì tạo virtual environment python:
+- mở cmd tại đây
+- gõ lệnh: python -m venv .venv
+
+Nếu đã có thư mục .venv thì chuyển bước 2
+
+2. activate virtual environment:
+- cũng trong cử sổ cmd gõ: .venv\Scripts\activate
+- (.venv) sẽ xuất hiện đầu dòng lệnh tiếp theo
+
+3. cài thư viện:
+- copy file requirement.txt trong thư mục tải về từ GitHub chuyển vào DK_giaovien\DK_giaovien\DK_giaovien\bin
+- cũng trong cử sổ cmd gõ: pip install -r requirement.txt để cài các thư viện
+- gõ tiếp: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+4. Cài Cuda 12.4:
+- tải cuda 12.4: https://developer.nvidia.com/cuda-12-4-0-download-archive?target_os=Windows&target_arch=x86_64
+- cài đặt next -> ...
+- Vào enviriment variables của windows -> system variables -> Path -> kiểm tra 2 đường dẫn sau, chưa có thì them vào:
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin
+- cũng trong cmd phía trên gõ tiếp để cài pytorch: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+5. copy file Yolo_Detect.py trong thư mục tải từ GitHub chuyển vào DK_giaovien\DK_giaovien\DK_giaovien\bin
+
+Xong!
+Quay lại chạy code winform
