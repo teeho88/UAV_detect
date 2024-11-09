@@ -22,7 +22,10 @@ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin
 - cũng trong cmd phía trên gõ tiếp để cài pytorch: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
-5. copy file Yolo_Detect.py trong thư mục tải từ GitHub chuyển vào DK_giaovien\DK_giaovien\DK_giaovien\bin
+5. copy file Yolo_Detect.py, yolo11.yaml trong thư mục tải từ GitHub chuyển vào DK_giaovien\DK_giaovien\DK_giaovien\bin
+
+6. tải weight theo link: https://drive.google.com/file/d/1Mz5byhm1aSa5xuZ4v1jmFCTdR2jq9IFt/view?usp=drive_link
+sau đó copy file best.pt vào DK_giaovien\DK_giaovien\DK_giaovien\bin
 
 Xong!
 Quay lại chạy code winform

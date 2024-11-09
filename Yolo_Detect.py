@@ -94,7 +94,7 @@ def main_():
 
 def main():
     # Load the exported ONNX model
-    yolo_model = YOLO("yolo11.yaml").load("runs//detect//train//weights//best.pt")
+    yolo_model = YOLO("yolo11.yaml").load("best.pt")
     yolo_model(np.ones((640,640,3), dtype=np.uint8), conf=0.4, device=0)
 
     while True:
