@@ -20,6 +20,13 @@ Nếu đã có thư mục .venv thì chuyển bước 2
 - Vào enviriment variables của windows -> system variables -> Path -> kiểm tra 2 đường dẫn sau, chưa có thì them vào:
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin
+- tải cuDnn: https://developer.nvidia.com/downloads/compute/cudnn/secure/8.9.7/local_installers/12.x/cudnn-windows-x86_64-8.9.7.29_cuda12-archive.zip/
+- Giải nén file .zip mà bạn đã tải xuống. Sao chép các file từ thư mục cuDNN vào thư mục cài đặt CUDA:
+  Mở thư mục cuda sau khi giải nén cuDNN. Trong đó có các thư mục bin, include, và lib.
+  Sao chép toàn bộ các file trong từng thư mục cuDNN vào thư mục CUDA tương ứng:
+  File thư mục bin: Sao chép toàn bộ file .dll vào C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\vX.X\bin.
+  File thư mục include: Sao chép các file .h vào C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\vX.X\include.
+  File thư mục lib: Sao chép các file .lib vào C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\vX.X\lib\x64.
 - cũng trong cmd phía trên gõ tiếp để cài pytorch: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
 5. copy file Yolo_Detect.py, yolo11.yaml trong thư mục tải từ GitHub chuyển vào DK_giaovien\DK_giaovien\DK_giaovien\bin
