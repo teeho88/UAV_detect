@@ -30,7 +30,7 @@ def main_():
     onnx_model = YOLO("yolo11.yaml").load("runs//detect//train//weights//best.pt")
     onnx_model(np.ones((640,640,3), dtype=np.uint8), conf=0.4, device=0)
     # Path to the video file
-    video_path = "Images//Sources//WIN_20241106_14_41_25_Pro.mp4"
+    video_path = "Images//Sources//New folder//WIN_20241108_14_52_02_Pro.mp4"
 
     # Create a VideoCapture object
     cap = cv2.VideoCapture(video_path)
@@ -148,4 +148,4 @@ def main():
             client_socket.close()
 
 if __name__ == "__main__":
-    main()
+    main_()

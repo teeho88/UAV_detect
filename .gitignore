@@ -178,6 +178,7 @@ pyrightconfig.json
 *.jpg
 *.mp4
 *.rar
+*.zip
 DK_giaovien
 runs
 
