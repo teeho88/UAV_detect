@@ -9,7 +9,7 @@ import struct
 
 def detect_UAV(model, img):
     # Run inference
-    results = model(img, conf=0.4, device=0, iou = 0.3)
+    results = model(img, conf=0.4, device=0, iou = 0.3, augment=True)
     # Process results list
     detect = 0
     for result in results:
