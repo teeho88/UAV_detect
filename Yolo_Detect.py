@@ -9,7 +9,7 @@ import struct
 
 def detect_UAV(model, img):
     # Run inference
-    results = model(img, conf=0.4, device=0)
+    results = model(img, conf=0.4, device=0, iou = 0.3)
     # Process results list
     detect = 0
     for result in results:
@@ -22,15 +22,15 @@ def detect_UAV(model, img):
                 x1 = int(box[2].item())
                 y1 = int(box[3].item())
                 cv2.rectangle(img, (x, y), (x1, y1), (0, 0, 255), 2)
-                cv2.putText(img, f"UAV: {boxes.conf[0].item()}", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                cv2.putText(img, f"UAV: {boxes.conf[0].item():.2f}", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2)
     return img, detect
 
 def main_():
     # Load the exported ONNX model
     onnx_model = YOLO("yolo11.yaml").load("runs//detect//train//weights//best.pt")
-    onnx_model(np.ones((640,640,3), dtype=np.uint8), conf=0.4, device=0)
+    onnx_model(np.ones((640,640,3), dtype=np.uint8), device=0)
     # Path to the video file
-    video_path = "Images//Sources//New folder (2)//WIN_20241106_15_13_10_Pro.mp4"
+    video_path = "Images//Sources//New folder (2)//WIN_20241106_15_13_50_Pro.mp4"
 
     # Create a VideoCapture object
     cap = cv2.VideoCapture(video_path)
@@ -95,7 +95,7 @@ def main_():
 def main():
     # Load the exported ONNX model
     yolo_model = YOLO("yolo11.yaml").load("best.pt")
-    yolo_model(np.ones((640,640,3), dtype=np.uint8), conf=0.4, device=0)
+    yolo_model(np.ones((640,640,3), dtype=np.uint8), device=0)
 
     while True:
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
